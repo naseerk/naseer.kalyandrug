@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+void main(int argc, char *argv[])
+{
+
+    if(argc <2) {
+        printf("\n too few params");
+        return ;
+    }
+
+    int input = atoi(argv[1]);
+    int output = computeblocks(input);
+    printf("\n the number of blocks is [%d]", output);
+
+    return;
+
+}
+
+int computeblocks(int a)
+{
+    if (a ==0)
+        return 0;
+    else
+        return (a + computeblocks(a-1));
+}
